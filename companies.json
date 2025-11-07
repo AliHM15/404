@@ -1,0 +1,162 @@
+{
+  "companies_report": [
+    {
+      "link": "https://wildplastic.com/collections/wildbags",
+      "company_name": "WILDPLASTIC",
+      "what_it_does": "Recovers plastic waste from the environment and recycles it into new products.",
+      "detailed_report": {
+        "business_model": "A purpose-driven e-commerce business that operates a global supply chain for 'wild plastic' collection and recycling. They combine environmental conservation with economic development by working with collector communities in countries lacking proper recycling infrastructure.",
+        "products_and_services": [
+          "WILDBAGS (trash bags) made from 100% recycled wild plastic.",
+          "WILDmailingbags (parcel bags/packaging foil) for B2B customers.",
+          "High-quality plastic granulate as a base material for industrial partners."
+        ],
+        "target_audience": "B2C consumers and B2B companies (e.g., retailers, logistics) with a strong focus on sustainability and social impact.",
+        "key_facts": "The company’s mission is to remove 'wild plastic' (found in nature, illegal dumpsites) from the environment before it reaches the ocean, ensuring fair wages for local collectors in regions like India, Thailand, and Indonesia."
+      }
+    },
+    {
+      "link": "https://puregreen.eco/",
+      "company_name": "Pure Green",
+      "what_it_does": "Sells superfood-based beverages and food items through retail and franchise locations.",
+      "detailed_report": {
+        "business_model": "Fast-growing food and beverage company operating as a national franchise and wholesale division. Their mission is to promote health and wellness by connecting people with nutrient-rich products.",
+        "products_and_services": [
+          "Cold-pressed juices (100% organic and non-GMO).",
+          "Handcrafted smoothies.",
+          "Fresh açaí bowls and shots (made with superfoods)."
+        ],
+        "target_audience": "Health-conscious consumers seeking nutrient-dense, convenient food and beverage options, as well as franchise partners.",
+        "key_facts": "The company was founded in 2014 and aims to build healthier communities. They are a prominent cold-pressed juice and smoothie franchise in the United States."
+      }
+    },
+    {
+      "link": "https://www.triglu.com/",
+      "company_name": "Triglu",
+      "what_it_does": "Designs and sells modular construction and play sets for children and adults.",
+      "detailed_report": {
+        "business_model": "E-commerce retailer specializing in sustainable play systems. The core products are large, interlocking cardboard panels and wooden connectors that allow users to build temporary indoor structures.",
+        "products_and_services": [
+          "Triglu Sets (Buden, Höhlen) consisting of 'Tris' (triangular panels) and 'Quads' (square panels).",
+          "Glu Holzverbinder (wooden connectors) for stable and simple assembly.",
+          "Crafting and coloring templates (e.g., for playhouse decoration)."
+        ],
+        "target_audience": "Families, educators, and creative individuals interested in sustainable, open-ended play and construction.",
+        "key_facts": "The products enable the construction of playhouses, caves, and other large-scale geometric structures using simple, reusable, and child-friendly components."
+      }
+    },
+    {
+      "link": "https://www.entratek.de/",
+      "company_name": "Entratek GmbH",
+      "what_it_does": "Specializes in e-mobility and renewable energy solutions, particularly electric vehicle charging infrastructure.",
+      "detailed_report": {
+        "business_model": "Distributor and provider of intelligent energy solutions for the smart home and commercial sector. They offer a range of hardware, customized systems, and related services (consulting, installation, backend).",
+        "products_and_services": [
+          "AC and DC charging stations (e.g., 'Power Dot' Wallbox, 'Power Eagle' DC fast chargers).",
+          "Charging accessories and cables.",
+          "Solutions for photovoltaics (PV inverters) and electric heating.",
+          "Services: Concept & Project Planning, Installation & Service, Monitoring & Backend support."
+        ],
+        "target_audience": "Private homeowners, corporate customers (fleets, hotels), electricians, public utilities, and specialist planners.",
+        "key_facts": "Founded in Hamburg in 2010, the company aims to support the expansion of the sustainable energy world and electromobility with smart technologies."
+      }
+    },
+    {
+      "link": "https://sensosports.de/",
+      "company_name": "Sensosports GmbH",
+      "what_it_does": "Manufactures and sells functional training and therapy equipment focused on balance and sensorimotor skills.",
+      "detailed_report": {
+        "business_model": "Manufacturer and direct-to-consumer retailer of patented training devices, emphasizing 'made in Germany' quality and sustainability principles.",
+        "products_and_services": [
+          "SENSOBOARD: A patented, multi-dimensional balance board for stability, coordination, and core muscle training.",
+          "Dry Trainer (dryYAK and drySUP): Ergometers for Kayak and Stand-Up Paddling simulation.",
+          "Therapy equipment and accessories (e.g., for dog physiotherapy).",
+          "Instructional videos and training programs."
+        ],
+        "target_audience": "Athletes, physiotherapists, rehabilitation centers, and private users seeking high-quality functional and balance training.",
+        "key_facts": "The flagship product, the SENSOBOARD, provides a unique five-dimensional movement experience that strongly activates reflex mechanisms to improve sensorimotor skills."
+      }
+    },
+    {
+      "link": "https://priwatt.de/",
+      "company_name": "priwatt GmbH",
+      "what_it_does": "Sells plug-and-play solar systems (Balkonkraftwerke), photovoltaic installations, and heat pumps.",
+      "detailed_report": {
+        "business_model": "German e-commerce start-up focused on simplifying the entry into the energy transition for private households and businesses. They sell complete, easy-to-install solar kits (mini-solar systems) online and offer extensive support services.",
+        "products_and_services": [
+          "Plug-and-play solar systems ('Balkonkraftwerke' / Balcony Power Plants) with simple self-assembly instructions.",
+          "Solar storage/batteries and power stations.",
+          "Photovoltaic (PV) complete systems and heat pumps.",
+          "Service: Free registration service with German authorities (MaStR and network operator), consulting, and financing support."
+        ],
+        "target_audience": "Private households and businesses in Germany looking for an affordable, easy, and decentralized way to generate their own green electricity.",
+        "key_facts": "The company offers a comprehensive service package to manage the complexity of installation and bureaucratic registration for solar energy customers."
+      }
+    },
+    {
+      "link": "https://wildbieneundpartner.ch/",
+      "company_name": "Wildbiene + Partner AG",
+      "what_it_does": "Promotes biodiversity by enabling people to host and support wild bees, primarily through specialized nesting aids.",
+      "detailed_report": {
+        "business_model": "A Swiss social and sustainable enterprise that sells 'BeeHomes' (nesting aids) and non-stinging mason bee cocoons to customers (partners). Customers host the bees for a season to aid local pollination, then return the cocoons for professional cleaning, parasite removal, and distribution to Swiss farmers for crop pollination.",
+        "products_and_services": [
+          "BeeHome (wild bee nesting aid) and mason bee cocoons.",
+          "Blühpatenschaft (Flower Sponsorships) for creating new wildflower meadows.",
+          "BirdSnack (bird houses) for supporting garden birds.",
+          "Wild bee care and maintenance services."
+        ],
+        "target_audience": "Individuals and companies in Switzerland interested in biodiversity, nature experiences, and sustainable environmental engagement.",
+        "key_facts": "Founded by ETH biologists, the company uses this model to increase the population of wild bees, which are important for agricultural pollination. Products are handcrafted in regional workshops."
+      }
+    },
+    {
+      "link": "https://www.freigeist-eyewear.com/de/",
+      "company_name": "FREIGEIST Eyewear",
+      "what_it_does": "Designs and sells premium prescription eyewear and sunglasses for men with larger head sizes.",
+      "detailed_report": {
+        "business_model": "Premium German eyewear brand (part of Eschenbach Optik) that addresses the niche market for 'XXL' or larger-sized frames. The company focuses on combining maximum comfort, high-quality materials, and sophisticated, confident design.",
+        "products_and_services": [
+          "Prescription spectacle frames in larger lens sizes (up to 62).",
+          "Sunglasses in large sizes.",
+          "Frames made from high-quality materials including acetate, titanium, stainless steel, wood, and stone.",
+          "Technical features like German spring hinges and carbon inserts for durability and comfort."
+        ],
+        "target_audience": "Men with larger head sizes (the 'big thinkers') who seek stylish, comfortable, and technically perfected eyewear.",
+        "key_facts": "The brand was established in 2013 specifically to meet the demand for larger frames that were previously underrepresented in the market."
+      }
+    },
+    {
+      "link": "https://www.medical-dude.de/",
+      "company_name": "Medical Dude",
+      "what_it_does": "Sells specialized sports and medical supplies and provides education/training for physical therapy and functional training.",
+      "detailed_report": {
+        "business_model": "E-commerce platform and educational provider focused on biomechanical and performance-oriented medical and training products.",
+        "products_and_services": [
+          "Dynamic Tape (a specialized, biomechanically-acting tape that differs from Kinesio Tape).",
+          "Functional training and therapy equipment (e.g., PowerPlay for recovery/therapy).",
+          "FLOKY Socks (performance socks).",
+          "Training courses and workshops (e.g., 'Biomechanical Taping Practitioner' training).",
+          "Evidence-based training plans and video courses."
+        ],
+        "target_audience": "Physiotherapists, athletes, trainers, and individuals engaged in rehabilitation and high-level physical performance.",
+        "key_facts": "The company's core product is Dynamic Tape, which is promoted as acting as an 'external muscle' to assist movement, requiring specialized training for correct application."
+      }
+    },
+    {
+      "link": "https://yuma.de/",
+      "company_name": "YUMA GmbH",
+      "what_it_does": "Sells complete, plug-in mini-solar systems (Balkonkraftwerke) and solar power accessories.",
+      "detailed_report": {
+        "business_model": "German e-commerce market leader specializing in renewable energies, founded in 2020. They sell pre-configured, easy-to-install solar kits to make solar power generation accessible to virtually any household, regardless of whether they own a house or apartment.",
+        "products_and_services": [
+          "Plug-in solar devices ('Balkonkraftwerke') for balconies, facades, roofs, and gardens.",
+          "Complete solar sets (modules, inverters, mountings, instructions).",
+          "Solar storage/batteries and Powerstations.",
+          "Consulting services."
+        ],
+        "target_audience": "Private households in Germany (homeowners and tenants) looking for simple, affordable self-sufficiency in electricity generation to reduce their energy bills and contribute to the energy transition.",
+        "key_facts": "The company's goal is to make every household a mini-power plant, selling complete sets that a layman can order, assemble, and connect quickly."
+      }
+    }
+  ]
+}

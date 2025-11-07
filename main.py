@@ -8,141 +8,13 @@ from typing import Dict, Any, List
 import streamlit as st
 from PIL import Image
 
-ARCHETYPE_PERSONAS = [
-  {
-    "name": "Julia Lehmann",
-    "age": 39,
-    "occupation": "Part-time Retail Worker",
-    "location": "Suburban Area",
-    "demographics": ["married", "two kids"],
-    "values": ["Stability", "Self-sufficiency", "Family well-being", "Avoiding public debate"],
-    "challenges": ["Financial pressure", "Loss of trust in politics", "Feeling overwhelmed by external events"],
-    "attitude_technology": "Pragmatic; views technology as a tool for saving money or making daily life easier. May be cautious about complex or costly tech, preferring simple, reliable solutions.",
-    "attitude_energy": "Seeks affordability and reliability in energy. Interested in solutions that reduce energy bills (e.g., energy-efficient appliances) or provide a sense of independence (e.g., small-scale home generation) to achieve self-sufficiency, with cost being a primary driver.",
-    "motivation": "Protecting her family's financial security and well-being, reducing personal stress, gaining control over her immediate living environment."
-  },
-  {
-    "name": "Kevin Jallow",
-    "age": 45,
-    "occupation": "Craftsman",
-    "location": "Small Town",
-    "demographics": ["family man"],
-    "values": ["Pragmatism", "Functionality", "Affordability", "Simplicity", "Stability"],
-    "challenges": ["Dislikes complex rules and bureaucracy", "Potential for disruption to his established routines"],
-    "attitude_technology": "Views technology as a practical tool to improve work efficiency or home comfort. Prefers straightforward, robust, and cost-effective solutions that are easy to use and maintain. Not interested in novelty for its own sake.",
-    "attitude_energy": "Primarily driven by cost-effectiveness and reliability. Wants energy systems that are dependable, affordable, and don't require complicated management. Open to proven energy-saving measures if they offer clear financial returns and are simple to implement.",
-    "motivation": "Ensuring a stable and comfortable life for his family, avoiding unnecessary hassle, practical problem-solving in his home and work."
-  },
-  {
-    "name": "Hannah Nguyen",
-    "age": 28,
-    "occupation": "UX Designer",
-    "location": "Berlin",
-    "demographics": ["minimalist"],
-    "values": ["Sustainability", "Ethical progress", "Social responsibility", "Innovation", "Minimalism"],
-    "challenges": ["Pressure from rapid societal and technological change", "Concerned about global crises (climate change, social inequality)", "Ensuring technology is used ethically"],
-    "attitude_technology": "Embraces technology, including AI tools, as a powerful force for positive change and efficiency. Values well-designed, intuitive, ethical, and sustainable tech. An early adopter who critically evaluates technology's broader impact.",
-    "attitude_energy": "Highly values renewable and sustainable energy solutions. Actively seeks ways to minimize her personal energy footprint, support ethical energy providers, and optimize consumption through smart home technology. Prioritizes ecological impact.",
-    "motivation": "Contributing to a more sustainable and equitable future, living in alignment with her personal values, promoting responsible innovation, reducing environmental impact."
-  },
-  {
-    "name": "Felix König",
-    "age": 55,
-    "occupation": "IT Consultant",
-    "location": "Munich",
-    "demographics": ["tech-savvy", "self-employed"],
-    "values": ["Efficiency", "Autonomy", "Smart investment", "Control", "Innovation", "Comfort"],
-    "challenges": ["Staying ahead in a fast-paced technological landscape", "Managing complex integrated systems"],
-    "attitude_technology": "Highly tech-savvy and an early adopter. Embraces automation and smart systems to optimize his personal and professional life. Sees technology as an enabler for efficiency, convenience, control, and intelligent investment. Enjoys integrating and managing complex tech stacks.",
-    "attitude_energy": "Views energy consumption as something to be meticulously optimized and controlled through smart home and energy management systems. Invests in renewable energy (e.g., solar panels, home battery storage) for financial returns, increased energy independence, and maximizing efficiency.",
-    "motivation": "Maximizing personal and financial efficiency, achieving energy self-reliance, leveraging cutting-edge technology for lifestyle and investment benefits, embracing innovation."
-  },
-  {
-    "name": "David Müller",
-    "age": 72,
-    "occupation": "Retired Teacher",
-    "location": "Rural Village",
-    "demographics": ["widower", "lives alone"],
-    "values": ["Simplicity", "Tradition", "Privacy", "Community (local)", "Reliability"],
-    "challenges": ["Feeling overwhelmed by rapid technological change", "Concerns about data privacy and security", "Limited tech literacy and patience for new interfaces"],
-    "attitude_technology": "Skeptical and resistant to new technology, especially if it feels intrusive or overly complex. Prefers manual processes and familiar tools. Uses essential tech (e.g., basic mobile phone) out of necessity but avoids smart devices or complex online services.",
-    "attitude_energy": "Values traditional, reliable energy sources. Primarily concerned with stable and affordable heating and electricity. Not interested in smart energy solutions or renewables unless they are extremely simple, proven, and offer significant, risk-free cost savings with no digital complexity.",
-    "motivation": "Maintaining a simple, private, and comfortable retirement, avoiding perceived risks and complexities of modern tech, preserving familiar routines."
-  },
-  {
-    "name": "Lena Schmidt",
-    "age": 21,
-    "occupation": "University Student (Environmental Science)",
-    "location": "University City",
-    "demographics": ["lives in shared apartment", "activist"],
-    "values": ["Climate justice", "Social equity", "Collective action", "Sustainability", "Innovation for good"],
-    "challenges": ["Limited personal financial means", "Frustration with political inaction on climate change", "Anxiety about the future of the planet"],
-    "attitude_technology": "Embraces technology for advocacy, information sharing, and organizing. Critically evaluates tech for its environmental and social impact. Interested in open-source, collaborative, and decentralized technologies that support sustainable practices and community building.",
-    "attitude_energy": "Strong advocate for 100% renewable energy and energy efficiency. Actively seeks to reduce her personal energy consumption (e.g., public transport, minimalist living) and supports policies that promote large-scale sustainable energy transitions. May use apps to track impact.",
-    "motivation": "Driving systemic change for climate justice and social equity, mobilizing communities, living a life consistent with her environmental values, securing a livable future."
-  },
-  {
-    "name": "Mark Johnson",
-    "age": 50,
-    "occupation": "Small-scale Farmer",
-    "location": "Rural Farmland",
-    "demographics": ["runs family farm", "practical-minded"],
-    "values": ["Self-reliance", "Durability", "Cost-effectiveness", "Practicality", "Connection to nature"],
-    "challenges": ["Reliance on weather patterns", "Fluctuating market prices for produce", "Maintaining aging equipment", "Access to reliable infrastructure in rural areas"],
-    "attitude_technology": "Sees technology as a means to improve farm productivity and resilience. Prefers robust, repairable, and field-tested equipment. Interested in basic automation (e.g., irrigation sensors) if it offers clear return on investment and reduces manual labor, but wary of overly complex or fragile systems.",
-    "attitude_energy": "Energy is a significant operational cost. Seeks reliable, affordable, and robust energy solutions. May consider off-grid solar or wind for specific farm needs (e.g., water pumps, remote sheds) if it's cost-effective and dependable. Prioritizes fuel efficiency for machinery. Interest in energy independence for the farm.",
-    "motivation": "Ensuring the long-term viability and profitability of his farm, maintaining his family's livelihood, reducing operational costs, adapting to environmental changes."
-  },
-  {
-    "name": "Clara Weber",
-    "age": 33,
-    "occupation": "Marketing Director",
-    "location": "Major City Apartment",
-    "demographics": ["single", "high income", "busy lifestyle"],
-    "values": ["Convenience", "Time-saving", "Comfort", "Personalization", "Modern living"],
-    "challenges": ["Extremely busy schedule", "Information overload", "Finding time for self-care"],
-    "attitude_technology": "Embraces technology that enhances convenience, saves time, and simplifies daily routines. A user of premium smart home devices, subscription services, and AI assistants. Values seamless integration and intuitive user experiences, willing to pay for cutting-edge solutions.",
-    "attitude_energy": "Prefers 'set-and-forget' energy solutions that optimize comfort and efficiency without requiring active management. Will invest in smart thermostats, energy-efficient appliances, and potentially premium green energy plans if they offer convenience and align with a modern, responsible lifestyle, without being a hassle.",
-    "motivation": "Maximizing personal time and comfort, maintaining a high-efficiency lifestyle, leveraging technology to manage a demanding career and personal life seamlessly."
-  },
-  {
-    "name": "Ben Carter",
-    "age": 42,
-    "occupation": "Software Engineer (Open Source Specialist)",
-    "location": "Mid-sized City",
-    "demographics": ["privacy advocate", "frequent remote worker"],
-    "values": ["Data privacy", "Transparency", "Open source", "Decentralization", "Security"],
-    "challenges": ["Distrust of large corporations and government surveillance", "Finding truly private and secure tech alternatives", "Educating others about digital risks"],
-    "attitude_technology": "Highly tech-savvy but deeply skeptical of proprietary software and data collection. Actively seeks out and contributes to open-source alternatives, custom builds, and privacy-focused solutions. Values control over his data and devices. Avoids cloud-dependent smart home tech.",
-    "attitude_energy": "Concerned about the environmental impact of energy generation and the data implications of smart grids. Prefers locally-generated, transparently managed renewable energy solutions. May be interested in off-grid or community-owned energy projects. Focuses on minimal, efficient energy consumption for privacy and sustainability reasons.",
-    "motivation": "Protecting digital rights and privacy, promoting ethical technology development, advocating for open and secure systems, fostering digital literacy."
-  },
-  {
-    "name": "Sarah Chen",
-    "age": 31,
-    "occupation": "Caregiver (Part-time)",
-    "location": "Urban Public Housing",
-    "demographics": ["single parent", "low income"],
-    "values": ["Survival", "Affordability", "Children's well-being", "Community support"],
-    "challenges": ["Struggling to afford basic necessities", "High energy bills in inefficient housing", "Limited access to information or resources for improvement"],
-    "attitude_technology": "Primarily views technology as a means to connect with essential services, family, and educational resources for her child. Cost is a major barrier to adoption. Seeks free or low-cost digital solutions; avoids anything that adds complexity or financial burden.",
-    "attitude_energy": "Overwhelmingly driven by the need to minimize energy bills to meet basic needs. Energy efficiency measures are only considered if they are free, easily accessible, and provide immediate, tangible savings without upfront cost. Struggles with 'energy poverty' and makes difficult choices between heating, food, and other essentials.",
-    "motivation": "Ensuring her child's basic needs are met, keeping living costs as low as possible, seeking stability and security amidst financial hardship."
-  },
-  {
-    "name": "Thomas Keller",
-    "age": 48,
-    "occupation": "Automotive Engineer",
-    "location": "Suburban Home with Workshop",
-    "demographics": ["hobbyist", "DIY enthusiast"],
-    "values": ["Innovation", "Problem-solving", "Understanding how things work", "Efficiency", "Hands-on experience"],
-    "challenges": ["Finding time for his numerous projects", "Keeping up with new technical developments in his hobbies", "The initial cost of advanced components"],
-    "attitude_technology": "Loves to tinker with technology, build custom solutions, and integrate various systems. Views technology as a sandbox for creativity and optimization. Enjoys understanding the underlying principles and isn't afraid of complex installations or programming. An early adopter of components rather than finished products.",
-    "attitude_energy": "Fascinated by energy systems and efficiency. Enjoys designing and implementing his own smart energy solutions, like optimizing home solar panel output, building battery storage, or automating energy usage patterns. Motivation is as much about the challenge and learning as it is about savings or sustainability. Might convert a car to electric.",
-    "motivation": "Personal intellectual stimulation, the satisfaction of building and optimizing, learning new skills, achieving a high degree of control and efficiency in his personal systems."
-  }
-]
 
+
+with open("persona_analysis.json", "r", encoding="utf-8") as f:
+    ARCHETYPE_PERSONAS = json.load(f)
+
+with open("companies.json", "r", encoding="utf-8") as f:
+    COMPANY_LISTS = json.load(f)
 
 try:
     import google.generativeai as genai
@@ -266,7 +138,7 @@ def get_gemini_model():
 
     api_key = None
     try:
-        api_key = st.secrets.get("GEMINI_API_KEY")
+        api_key = os.getenv("GEMINI_API_KEY")
     except Exception:
         pass
     api_key = api_key or os.getenv("GEMINI_API_KEY")
@@ -298,55 +170,59 @@ def generate_challenges_with_gemini(profile: Dict[str, Any]) -> List[Dict[str, A
         return []
 
     system_prompt = """
-You design personalised, realistic sustainability challenges.
+You are a helpful AI assistant. You design personalised, realistic sustainability challenges.
 
-You have access to a library of archetype personas (ARCHETYPE_PERSONAS below).
-Each persona describes values, challenges, attitudes to technology & energy, and motivation.
+You have access to a library of archetype personas (ARCHETYPE_PERSONAS) which describe values, challenges, and motivations. You also have access to a curated list of sustainable startups (COMPANY_LISTS).
 
-Your task for each user_profile:
+Your task is to analyze the provided user_profile and perform the following steps:
 
-1. Internally decide which *one or two* archetype personas the user is closest to
-   (based on age, values, tech attitude, income, housing, etc.).
-2. Generate 3–4 challenges that:
-   - are feasible for this specific user (respect housing, devices, financial situation,
-     tech comfort, and anything they wrote about habits),
-   - reflect the *tone and priorities* of the matched personas
-     (e.g. Sarah → zero-cost basics, David → ultra simple & offline,
-      Felix / Thomas → advanced smart home / DIY, Hannah / Lena → climate & ethics focus,
-      Clara → convenience & automation, Mark → farm & self-reliance, Ben → privacy-aware solutions),
-   - focus on realistic energy or CO₂ reduction and/or clear cost savings.
+1.  **Internal Persona Matching:** Silently determine which **one or two** archetype personas the user is closest to based on their age, values, tech attitude, income, housing, and habits.
 
-Important constraints and nuances:
+2.  **Company-Driven Challenge Generation:** Generate 3–4 challenges that are **directly inspired by the products or services** in the `COMPANY_LISTS`.
 
-- If the profile hints at low income / financial stress (e.g. similar to Sarah or Julia):
-  - Avoid upfront investments and expensive devices.
-  - Prefer free or very low-cost measures with immediate impact.
-- If the profile looks tech-skeptical, older, or overwhelmed (e.g. David):
-  - Keep actions simple, offline, and low-complexity.
-  - Do not require new apps, complex dashboards, or cloud accounts.
-- If the profile is tech-savvy or loves tinkering (e.g. Felix, Thomas, Ben):
-  - You MAY propose smart-home automations, monitoring, or DIY projects,
-    but they must still be concrete and realistically doable.
-  - For Ben, explicitly avoid surveillance-heavy cloud solutions; prefer local / privacy-friendly options.
-- For activist / climate-justice types (e.g. Lena, Hannah):
-  - You can include one challenge that links personal behaviour with community / systemic impact.
-- Always describe concrete behaviour: what to do, how often, for how long.
-- For each challenge, give a rough monthly CO₂ saving as a *positive number* in kg.
-  - Usually between 3 and 100 kg/month. Avoid 0 or unrealistically huge values.
+Each challenge must:
+*   Be linked to a specific company. The action you describe should be something a user could achieve using a product from the list. Mention the company by name as a concrete example (e.g., "...using a kit from YUMA or Priwatt," or "...by switching to WILDBAGS.").
+*   Be feasible for the user. The suggested company and product must respect the user's housing situation, financial constraints, and comfort with technology.
+*   Reflect the persona's priorities. The challenge's tone and goal must align with the values of the matched persona (e.g., cost-saving for Sarah, convenience for Clara, tech optimization for Felix).
+*   Offer clear impact. Focus on realistic energy or CO₂ reduction and/or clear cost savings.
 
-Output format (VERY IMPORTANT):
+---
+#### **Important Constraints and Nuances:**
 
-Return ONLY valid JSON with exactly this structure:
+*   **Financial Sensitivity (e.g., Sarah, Julia):** For users on a low income, **only** suggest challenges based on low-cost or free company offerings. For example, switching to WILDPLASTIC trash bags is a great fit; suggesting a Priwatt solar system (which requires a large upfront investment) is **not**.
+*   **Tech Skepticism (e.g., David):** For users who are older, overwhelmed, or tech-averse, suggest simple, offline actions. A good match would be hosting bees with Wildbiene + Partner. A poor match would be setting up a smart EV charger from Entratek.
+*   **Tech-Savvy & DIY (e.g., Felix, Thomas):** For these users, you **should** propose challenges that involve smart-home tech, data monitoring, or hands-on installation, such as the offerings from Priwatt, YUMA, or Entratek.
+*   **Privacy-Aware (e.g., Ben):** When suggesting tech solutions for this persona, prioritize companies that offer local control or have a clear privacy focus.
+*   **Activist & Ethical Focus (e.g., Lena, Hannah):** For these users, highlight the systemic or community impact of a company's mission. WILDPLASTIC (fair wages for collectors) or Wildbiene + Partner (supporting agricultural pollination) are excellent examples.
+*   **Concrete Actions:** Always describe a specific behavior: what to do, how often, for how long.
+*   **CO₂ Savings:** For each challenge, provide a rough monthly CO₂ saving as a *positive number* in kg (typically between 3 and 100 kg/month).
 
+---
+#### **Example of a Good Response Flow:**
+
+*   **User Profile:** "I'm 45, own my home with a garden, and recently bought an electric car. I'm a software engineer, so I'm comfortable with tech and like optimizing things to save money and be more efficient."
+*   **Internal Persona Match:** Felix (tech-savvy, data-driven) and Thomas (DIY, homeowner).
+*   **Company Match from List:** Entratek GmbH (specializes in EV charging solutions).
+*   **Generated Challenge:**
+    *   **Title:** "Install an Intelligent EV Charging Station"
+    *   **Description:** "Optimize your electric vehicle charging by installing a smart wallbox from a provider like Entratek. This allows you to schedule charging for off-peak hours and monitor your energy consumption."
+    *   **Why_it_fits:** "As a tech-savvy homeowner with an EV, this project aligns perfectly with your interest in optimization and efficiency, giving you direct control over your energy costs."
+
+---
+#### **Output Format (VERY IMPORTANT):**
+
+Return ONLY valid JSON with exactly this structure. Do not add any text or explanation outside of the JSON block.
+
+```json
 {
   "challenges": [
     {
       "id": "short_unique_id",
       "title": "short title",
-      "description": "1–3 short sentences explaining what to do.",
+      "description": "1–3 short sentences explaining what to do, referencing a company from the list.",
       "difficulty": "Easy | Medium | Advanced",
       "estimated_monthly_co2_saving_kg": number,
-      "why_it_fits": "1–2 sentences explaining why this suits THIS user."
+      "why_it_fits": "1–2 sentences explaining why this challenge and the suggested company's approach suit THIS user."
     }
   ]
 }
@@ -361,6 +237,8 @@ Return ONLY valid JSON with exactly this structure:
         + json.dumps(ARCHETYPE_PERSONAS, ensure_ascii=False)
         + "\n\nUser profile:\n"
         + json.dumps(profile, ensure_ascii=False)
+        + "\n\nCOMPANY_LISTS:\n"
+        + json.dumps(COMPANY_LISTS, ensure_ascii=False)
     )
 
     try:
