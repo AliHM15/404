@@ -1,0 +1,23 @@
+{
+    "user1": {
+        "name": "Alice Johnson",
+        "email": "alice@example.com",
+        "points": 1250,
+        "profile_picture": "profilepics/user1.jpg",
+        "tags": []
+    },
+    "user2": {
+        "name": "Bob Smith",
+        "email": "bob@example.com",
+        "points": 850,
+        "profile_picture": "profilepics/user2.jpg",
+        "tags": []
+    },
+    "user3": {
+        "name": "Charlie Brown",
+        "email": "charlie@example.com",
+        "points": 2100,
+        "profile_picture": "profilepics/user3.jpg",
+        "tags": []
+    }
+}
