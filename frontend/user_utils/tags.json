@@ -1,7 +1,40 @@
 {
-    "tags": [
+    "interests": [
         "sustainability",
         "technology",
-        "saving"
+        "fitness",
+        "cooking",
+        "reading",
+        "traveling",
+        "music",
+        "photography",
+        "gaming",
+        "gardening",
+        "art",
+        "sports"
+    ],
+    "living_status": [
+        "living_alone",
+        "roommate",
+        "with_family",
+        "homeowner",
+        "renter",
+        "dorm_resident",
+        "commuter",
+        "shared_housing"
+    ],
+    "profession": [
+        "software_engineer",
+        "teacher",
+        "healthcare",
+        "business",
+        "creative",
+        "research",
+        "trades",
+        "service_industry",
+        "student",
+        "entrepreneur",
+        "retired",
+        "freelancer"
     ]
 }
