@@ -1,6 +1,6 @@
 import streamlit as st
 from navigation import nav_button
-from user_utils.users import get_user
+from user_utils.users import get_current_user
 from user_utils.tags import get_tags_by_category
 from user_utils.tags import toggle_user_tag
 from buttons import tag_button
@@ -8,11 +8,14 @@ import os
 
 st.set_page_config(page_title="Profile", page_icon="👤", layout="centered")
 
+# Force white background and dark text
+
+
 nav_button()
 
 # TODO: Replace with actual user session handling; keep user_id separate so we can pass it to callbacks
-user_id = "user1"
-current_user = get_user(user_id)
+current_user = get_current_user()
+user_id = current_user
 
 
 # Get absolute path - profilepics are in user_utils folder

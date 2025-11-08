@@ -15,3 +15,8 @@ def get_user(user_id):
 def get_all_users():
     """Get all users"""
     return load_users()
+
+def get_current_user(user_id = "user1"):
+    """Get the current logged-in user (stub function)"""
+    # In a real application, this would retrieve the user from session or auth context
+    return get_user(user_id)

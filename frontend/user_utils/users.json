@@ -4,20 +4,29 @@
         "email": "alice@example.com",
         "points": 1250,
         "profile_picture": "profilepics/user1.jpg",
-        "tags": []
+        "tags": [
+            "renter",
+            "dorm_resident"
+        ],
+        "kwh": 600,
+        "co2": 168
     },
     "user2": {
         "name": "Bob Smith",
         "email": "bob@example.com",
         "points": 850,
         "profile_picture": "profilepics/user2.jpg",
-        "tags": []
+        "tags": [],
+        "kwh": 280,
+        "co2": 112
     },
     "user3": {
         "name": "Charlie Brown",
         "email": "charlie@example.com",
         "points": 2100,
         "profile_picture": "profilepics/user3.jpg",
-        "tags": []
+        "tags": [],
+        "kwh": 750,
+        "co2": 300
     }
 }
